@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-swa!ix0*0wfyb7#jvb$ml&jx0q-7jdkwpzn)j+2$np)y1_a#(3'
+#django-insecure-swa!ix0*0wfyb7#jvb$ml&jx0q-7jdkwpzn)j+2$np)y1_a#(3
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -65,6 +69,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'core.urls'
 
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+    'django.contrib.auth.backends.ModelBackend'
+)
 
 
 TEMPLATES = [
@@ -159,4 +167,5 @@ LOGIN_URL = 'login'
 
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
 
-
+SOCIAL_AUTH_GITHUB_KEY = str(os.getenv('GITHUB_KEY'))
+SOCIAL_AUTH_GITHUB_SECRET = str(os.getenv('GITHUB_SECRET'))

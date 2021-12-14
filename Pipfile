@@ -12,6 +12,7 @@ django-machina = "*"
 django-crispy-forms = "*"
 markdown2 = "==2.4.0"
 django-storages = {extras = ["azure"], version = "*"}
+psycopg2 = "*"
 
 [dev-packages]
 autopep8 = "*"

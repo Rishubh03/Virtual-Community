@@ -1,0 +1,27 @@
+{% extends "encyclopedia/base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Edit
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+        <h3 class="">{{articles.title}}</h3>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-md-12">
+    <form method="POST" enctype="multipart/form-data" action="{% url 'edit' articles.id %}">
+        {% csrf_token %}
+        <h5 class="">Edit:</h5>
+            
+            {{edit| crispy}}
+        <br>
+        <input class="save btn btn-info" type="submit" value="Save"/>
+    </form>
+</div>
+</div>
+</div>
+{% endblock %}

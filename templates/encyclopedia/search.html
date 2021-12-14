@@ -1,0 +1,35 @@
+{% extends 'encyclopedia/base.html' %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h2 class="">Found pages:</h2>
+    </div>
+    
+       
+    {% for item in searched %}
+    <div class="row border-top border-light my-3">
+            
+                <div class="col-md-4 col-sm-12 ">
+                    <img class="m-2 border border-dark rounded" src="{{item.image.url}}" alt="">
+                </div>
+                <div class="col-md-8 col-sm-12">
+                    <a href=/wiki/{{item.id}} class="link link-dark"><h3>{{ item.title }}</h3></a>
+                </div>
+            
+        </div>
+
+
+        
+        
+        {% empty %}
+            <h3 class="no-item">No item</h3>
+    {% endfor %}
+
+
+</div>
+{% endblock %}

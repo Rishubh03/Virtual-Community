@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+pillow = "*"
+social-auth-app-django = "*"
+python-dotenv = "*"
+django-machina = "*"
+django-crispy-forms = "*"
+markdown2 = "==2.4.0"
+
+[dev-packages]
+autopep8 = "*"
+
+[requires]
+python_version = "3.8"

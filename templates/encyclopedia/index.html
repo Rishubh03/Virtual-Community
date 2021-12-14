@@ -1,0 +1,30 @@
+{% extends "encyclopedia/base.html" %}
+{% load static %}
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row m-3">
+    <h5 class="text-center">Trending How-To Articles</h5>
+</div>
+
+<div class="row">
+        {% for entry in articles %}
+  <div class="col-sm-3 m-4">
+        <div class="card border-primary" style="width: 18rem; height:22rem">
+            
+            <img class="card-img-top" src="{{entry.image.url}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{ entry }}</h5>
+              <p class="card-text">{{entry.textarea |truncatewords:10 |safe}}</p>
+              <a href="{% url 'entry' entry.id %}" class="btn btn-primary">View</a>
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+    </div> 
+
+</div>
+{% endblock %}

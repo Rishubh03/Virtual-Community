@@ -1,0 +1,78 @@
+{% extends "users/base.html" %} 
+{% load static %}
+{% block title %} Home Page {% endblock title%}
+{% block content %}
+
+<div class="container">
+
+  <div class="row">
+    <div class="jumbotron">
+      <h1 class="display-4">
+        Welcome, {{user.first_name.title|default:'Guest'}}
+      </h1>
+      <p class="lead">
+        An Online virtual community for students, providing a platform for learning, sharing experiences and leveraging their knowledge to engage with other students.
+      </p>
+      <hr class="my-4" />
+      <p class="lead">
+        {% if user.is_authenticated %}
+        <a
+          class="btn btn-primary btn-lg"
+          href="{% url 'logout' %}"
+          role="button"
+          >Logout</a
+        >
+        {% else %}
+        <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button"
+          >Sign in</a
+        >
+        {% endif %}
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-4 ">
+      <div class="card mx-auto" style="width: 18rem">
+        <img class="card-img-top" width="10%" src="{% static '/img/blog.png' %}" alt="Card image cap" />
+        <div class="card-body">
+          <h4 class="card-title">Blogs</h4>
+          <p class="card-text">
+            Publish your passions your way. Whether you'd like to share your knowledge, experiences or the latest news, create a unique and beautiful blog for free.
+          </p>
+          <a href="{% url 'blog-home' %}" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      </div>
+
+      <div class="col-md-4 my-auto">
+        <div class="card mx-auto" style="width: 18rem">
+          <img class="card-img-top" src="{% static '/img/forum.png' %}" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">Forum</h5>
+            <p class="card-text">
+              A public platform building the definitive collection of questions & answers. A community-based space to find and contribute answers to technical questions. 
+            </p>
+            <a href="{% url 'forum-home' %}" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+        </div>
+
+    <div class="col-md-4 ">
+        <div class="card mx-auto" style="width: 18rem">
+          <img class="card-img-top" src="{% static '/img/wiki.png' %}" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">Wiki</h5>
+            <p class="card-text">
+              A collaborative tool that allows students to contribute and modify one or more pages of course related materials. facilitate community-building within a course. 
+            </p>
+            <a href="{% url 'index' %}" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+        </div>
+      
+    </div>
+</div>
+
+{% endblock content %}

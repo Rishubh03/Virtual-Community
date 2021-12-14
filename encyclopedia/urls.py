@@ -9,4 +9,5 @@ urlpatterns = [
     path("create/", views.create, name="create"),
     path("edit/<int:id>/", views.edit, name="edit"),
     path("wiki/", views.randomPage, name="random")
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

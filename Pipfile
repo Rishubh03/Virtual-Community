@@ -11,6 +11,7 @@ python-dotenv = "*"
 django-machina = "*"
 django-crispy-forms = "*"
 markdown2 = "==2.4.0"
+django-storages = {extras = ["azure"], version = "*"}
 
 [dev-packages]
 autopep8 = "*"

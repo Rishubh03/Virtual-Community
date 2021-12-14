@@ -6,7 +6,7 @@ from django.db import models
 class Articles(models.Model):
     title = models.CharField(max_length=200, unique=True)
     textarea = models.TextField()
-    image = models.ImageField(upload_to='wiki/')
+    image = models.ImageField(upload_to='wiki')
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 

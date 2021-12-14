@@ -2,7 +2,6 @@ import random
 from django import forms
 from django.shortcuts import redirect, render, get_object_or_404
 from encyclopedia.models import Articles
-from . import util
 from markdown2 import Markdown
 from .forms import Search, Post, Edit
 

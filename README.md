@@ -43,5 +43,18 @@ The models and templates of this app can be found in the `encyclopedia` folder.
 * **Langauge:** Python 3.8
 * **Framework:** Django 3.2
 * **File Storage:** Azure Blob Storage
-* **Database** Azure Database for Postgres
+* **Database** Azure Database for PostgreSQL
 * **Deployment** Azure App Services
+
+## Installation Instructions
+If you want to work with this project or create a version of it make sure to follow the steps below!
+
+1. Install `python 3`, `pip` and `virtualenv`
+2. Clone this repo `git clone https://github.com/Rishubh03/Virtual-Community.git`
+3. Install dependencies `pipenv install requirements.txt`
+4. Activate the virtual environment `pipenv shell`
+5. Make Migrations `python manage.py makemigrations`
+6. Migrate `python manage.py migrate`
+7. Create a super user `python manage.py createsuperuser`
+8. Runserver `python manage.py runserver`
+

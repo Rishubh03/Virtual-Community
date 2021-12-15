@@ -3,6 +3,8 @@ This web application provides a single platform to students, teachers, and Unive
 Users can share, build and organize knowledge, opportunities, and resources for learning, and studying.
 
 ## A User 
+User:- dummy
+Password:- #12Password
 A User app allows users to register, login, update profile, forgot password, reset password.
 
 

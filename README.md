@@ -44,7 +44,7 @@ The models and templates of this app can be found in the `encyclopedia` folder.
 ## Tech Stacks
 
 * **Langauge:** Python 3.8
-* **Framework:** Django 3.2
+* **Framework:** Django 4.0
 * **File Storage:** Azure Blob Storage
 * **Database** Azure Database for PostgreSQL
 * **Deployment** Azure App Services
